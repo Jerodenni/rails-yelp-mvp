@@ -1,0 +1,17 @@
+
+<%= render @restaurant %>
+<div class="container mt-5">
+  <ul class="list-group ms-5 mb-3">
+    <% @restaurant.reviews.each do |review| %>
+      <li>
+        <%= review.rating %> - <%= review.content %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div class="container">
+<%= render "reviews/form", restaurant: @restaurant, review: @review %>
+</div>
+<div class="ms-4">
+  <%= link_to "Back to the list", restaurants_path %>
+</div>
